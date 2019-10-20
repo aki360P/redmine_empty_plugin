@@ -1,6 +1,6 @@
 # English strings go here for Rails i18n
 en:
-  project_module_redmine_work_in_progress: "Redmine sample plugin"
+  project_module_redmine_work_in_progress: "Redmine empty plugin"
   permission_remp_board_view: "view"
   permission_remp_board_edit: "edit"
   permission_remp_setting: "setting"
