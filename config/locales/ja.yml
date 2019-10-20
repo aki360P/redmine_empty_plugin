@@ -1,0 +1,10 @@
+# 日本語 for Rails i18n
+ja:
+  project_module_redmine_empty_plugin: "空のプラグイン"
+  permission_remp_board_view: "表示"
+  permission_remp_board_edit: "編集"
+  permission_remp_setting: "設定"
+  
+  label_remp: "空プラグイン"
+  label_remp_gb1: "グローバル設定1"
+  label_remp_setting_tracker_id: "Tracker"

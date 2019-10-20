@@ -1,0 +1,23 @@
+
+<div class='remp_settings'>
+
+<%= labelled_form_for :settings, @remp_setting,
+                             :url => {:controller => 'remp_settings',
+                             :action => 'edit', :project_id => @project, :tab => 'remp_settings',
+                             :setting_id => @remp_setting.id}, 
+                             :html => {:id => 'remp_settings' } do |f| %>
+
+
+  <div class="box tabular">
+    <% tracker_ids = Tracker.all %>
+      <p>
+        <%= label_tag('settings[tracker_id]', l(:label_remp_setting_tracker_id)) %>
+        <%= select_tag('settings[tracker_id]', options_for_select(tracker_ids.collect{|c| [c.name, c.id]}, @remp_setting['tracker_id'])) %>
+      </p>
+
+  <%= submit_tag l(:button_save) %>
+
+  </div>
+  <% end %>
+</div>
+
