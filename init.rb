@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_empty_plugin do
   name 'Redmine empty plugin'
   author 'Akinori Iwasaki'
   description 'Sample plugin for beginner developers'
-  version '0.1.0'
+  version '0.2.0'
   url 'https://github.com/aki360P/redmine_empty_plugin'
   
   project_module :redmine_empty_plugin do
