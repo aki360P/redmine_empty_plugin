@@ -1,5 +1,4 @@
-require 'redmine'
-require 'remp_projects_helper_patch'
+require File.expand_path('../lib/remp_projects_helper_patch', __FILE__)
 
 Redmine::Plugin.register :redmine_empty_plugin do
   name 'Redmine empty plugin'

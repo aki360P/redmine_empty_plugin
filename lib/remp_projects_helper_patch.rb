@@ -1,7 +1,6 @@
 require 'projects_helper'
 
-module RempSettings
-  module ProjectsHelperPatch
+module RempProjectsHelperPatch
     extend ActiveSupport::Concern
 
     def project_settings_tabs
@@ -21,7 +20,6 @@ module RempSettings
 
       action
     end
-  end
 end
 
-ProjectsController.helper(RempSettings::ProjectsHelperPatch)
+ProjectsController.helper(RempProjectsHelperPatch)
