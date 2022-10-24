@@ -5,7 +5,7 @@ This is a sample plugin for beginner developers.
 * Project module and project setting tab
 * Load global setting and project setting
 * Index page
-* Redmine 5.x, 4.x, 3.x compatible
+* Redmine 4.x and 3.x compatible
 
 # Screenshots
 #### Overview
