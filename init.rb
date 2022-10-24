@@ -6,6 +6,7 @@ Redmine::Plugin.register :redmine_questionnaire_plugin do
   description 'Add questionnaire function'
   version '0.1.0'
   url 'https://github.com/aki360P/redmine_questionnaire_plugin'
+
   
   project_module :redmine_questionnaire_plugin do
     permission :rqre_questionnaires_view, :rqre_questionnaires => [:index, :show]
