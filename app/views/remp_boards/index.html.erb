@@ -1,0 +1,29 @@
+<br/>
+This plugin is sample plugin for beginer developvers.<br/>
+Issues that selected in project setting will be displayed.<br/>
+When grobal setting 1 enabled, all issues including another project with/without prmission.<br/>
+<br/>
+selected tracker_id : <%= @remp_setting.tracker_id %><br/>
+selected tracker : <%= Tracker.find_by_id(@remp_setting.tracker_id) %><br/>
+global setting 1 : <%= @remp_gb1 %><br/>
+<br>
+<br>
+index:
+<%= @remp_issues.to_a %>
+
+
+
+
+<script type="text/javascript">
+    var api_key = "<%= User.current.api_key %>";
+    var baseUrl = "<%= config.relative_url_root %>";
+    var project_id = "<%= @project.id %>";
+
+</script>
+
+
+  <% content_for :sidebar do %>
+    <%= render :partial => 'sidebar' %>
+  <% end %>
+
+<br>

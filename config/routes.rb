@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   #add /projects/:id
   resources :projects do
-    #add get /projects/:id/rqre_boards using controller 'rqre_boards' action 'index' 
-    resources :rqre_questionnaires
+    #add get /projects/:id/remp_boards using controller 'remp_boards' action 'index' 
+    resources :remp_boards, only: [:index]
 
-    #add patch /projects/:id/settings/rqre_setting using controller 'rqre_settings' action 'edit'
-    #patch :rqre_setting, path: '/settings/rqre_setting', controller: 'rqre_settings', action: :edit
+    #add patch /projects/:id/settings/remp_setting using controller 'remp_settings' action 'edit'
+    patch :remp_setting, path: '/settings/remp_setting', controller: 'remp_settings', action: :edit
   end
 
   #old Using a dynamic :action segment in a route is deprecated and will be removed in Rails 6.0.
-  #match 'projects/:project_id/rqre_boards/:action', :controller => 'rqre_boards', :via => [:get]
-  #match 'projects/:project_id/settings/rqre_setting/:action', :controller => 'rqre_settings', :via => [:get, :post, :patch, :put]
+  #match 'projects/:project_id/remp_boards/:action', :controller => 'remp_boards', :via => [:get]
+  #match 'projects/:project_id/settings/remp_setting/:action', :controller => 'remp_settings', :via => [:get, :post, :patch, :put]
 end
