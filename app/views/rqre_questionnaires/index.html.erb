@@ -1,0 +1,45 @@
+
+
+<script type="text/javascript">
+    var api_key = "<%= User.current.api_key %>";
+    var baseUrl = "<%= config.relative_url_root %>";
+    var project_id = "<%= @project.id %>";
+
+</script>
+
+<br/>
+This plugin is questionnarie plugin.<br/>
+<br>
+create new <%link_to %>
+<% if User.current.allowed_to?(:rqre_questionnaires_edit, @project) %>
+    <%= link_to l(:label_rqre_new), new_project_rqre_questionnaire_path(@project), :class => 'icon icon-add' %>
+  <% end %>
+<br>
+index:<br>
+<%= @rqre_questionnaires.to_a %>
+
+
+<table class="list boards">
+  <thead><tr>
+    <th><%= l(:label_rqre_title) %></th>
+    <th><%= l(:label_rqre_end_datetime) %></th>
+    <th><%= l(:label_rqre_vote) %></th>
+  </tr></thead>
+  <tbody>
+<% @rqre_questionnaires.each do |r| %>
+  <tr class="board">
+    <td class="name"><%= link_to r.title, project_rqre_questionnaire_path(r.project, r), :class => "board" %>
+      <p class="description"><%= r.note %></p></td>
+    <td class="end"><%= r.end %></td>
+    <td></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+  <% content_for :sidebar do %>
+    <%= render :partial => 'sidebar' %>
+  <% end %>
+
+<br>

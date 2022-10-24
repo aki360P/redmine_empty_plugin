@@ -1,1 +1,1 @@
-  gem 'activerecord-compatible_legacy_migration'
+ # gem 'activerecord-compatible_legacy_migration'

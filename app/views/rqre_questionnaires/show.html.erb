@@ -1,0 +1,31 @@
+<div class='rqre_questionnarie'>
+
+<h2>Questionnarie Form</h2>
+<% if User.current.allowed_to?(:rqre_questionnaires_edit, @project) %>
+  <%= link_to l(:label_rqre_new), edit_project_rqre_questionnaire_path(@project, @rqre_questionnaire), :class => 'icon icon-add' %>
+<% end %>
+
+
+  <div class="box tabular">
+    <%= hidden_field_tag('rqre_questionnaires[project_id]', @rqre_questionnaire['project_id']) %>
+    <p><%= label_tag('rqre_questionnaires[title]', l(:label_rqre_title)) %><%= @rqre_questionnaire['title'] %></p>
+    <p><%= label_tag('rqre_questionnaires[note]', l(:label_rqre_note)) %><%= @rqre_questionnaire['note'] %></p>
+    <p><%= label_tag('rqre_questionnaires[description]', l(:label_rqre_description)) %><%= @rqre_questionnaire['description'] %></p>
+    <p><%= label_tag('rqre_questionnaires[revote]', l(:label_rqre_revote)) %><%= @rqre_questionnaire['revote'] %></p>
+    <p><%= label_tag('rqre_questionnaires[end]', l(:label_rqre_end)) %><%= @rqre_questionnaire['end'].to_date %></p>
+  </div>
+
+
+  <% @rqre_questions.each do |q| %>
+    <div class="box tabular">
+      <%= hidden_field_tag('rqre_questions[id]', q['id']) %>id=<%= q.id %>  dtype=<%= q.dtype %>
+      <p><%= q.title %></p>
+      <% case q.dtype when 1 %> out1
+          <% when 2 %> "out2"
+          <% else %> "out_else"
+      <% end %>
+    </div>
+  <% end %>
+
+
+</div>

@@ -1,0 +1,16 @@
+<div class='rqre_questionnarie'>
+
+<h2>Questionnarie Form</h2>
+
+  <%= form_for @rqre_questionnaire, url: project_rqre_questionnaire_path(@project, @rqre_questionnaire) do %>
+  <div class="box tabular">
+    <%= hidden_field_tag('rqre_questionnaires[project_id]', @rqre_questionnaire['project_id']) %>
+    <p><%= label_tag('rqre_questionnaires[title]', l(:label_rqre_title)) %><%= text_field_tag('rqre_questionnaires[title]', @rqre_questionnaire['title']) %></p>
+    <p><%= label_tag('rqre_questionnaires[note]', l(:label_rqre_note)) %><%= text_field_tag('rqre_questionnaires[note]', @rqre_questionnaire['note']) %></p>
+    <p><%= label_tag('rqre_questionnaires[description]', l(:label_rqre_description)) %><%= text_area_tag('rqre_questionnaires[description]', @rqre_questionnaire['description']) %></p>
+    <p><%= label_tag('rqre_questionnaires[revote]', l(:label_rqre_revote)) %><%= select_tag('rqre_questionnaires[revote]', options_for_select([['enable', true],['disable', false]], @rqre_questionnaire['revote'])) %></p>
+    <p><%= label_tag('rqre_questionnaires[end]', l(:label_rqre_end)) %><%= date_field_tag('rqre_questionnaires[end]', @rqre_questionnaire['end'].to_date, :size => 10) %><%= calendar_for('rqre_questionnaires[end]') %></p>
+    <%= submit_tag l(:button_save) %>
+  </div>
+  <% end %>
+</div>
